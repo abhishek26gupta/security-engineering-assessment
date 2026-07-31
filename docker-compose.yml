@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Petpooja Integration Core Gateway Core Framework
+  petpooja-gateway:
+    image: node:20-alpine
+    container_name: petpooja-core-gateway-service
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./app:/home/node/app
+    working_dir: /home/node/app
+    ports:
+      - "127.0.0.1:3000:3000"
+    command: >
+      sh -c "echo 'Petpooja Gateway Container initialization complete. Awaiting application entrypoint sync...' && tail -f /dev/null"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  default:
+    name: petpooja-internal-mesh-net

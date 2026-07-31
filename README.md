@@ -1,9 +1,5 @@
 # Petpooja POS Integration Core Gateway
 
-[![Build Status](https://shields.io)](#)
-[![Compliance Tier](https://shields.io)](#)
-[![Deployment Environment](https://shields.io)](#)
-
 This repository houses the high-throughput gateway orchestration layer responsible for managing menu syncs, real-time inventory adjustments, and offline-first data reconciliation streams between multi-tenant POS terminal hardware and core backend APIs.
 
 ---
